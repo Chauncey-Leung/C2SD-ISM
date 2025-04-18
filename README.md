@@ -1,2 +1,2 @@
-# C2SD-ISM
+# C^2SD-ISM
 Open source resources related to C2SD-ISM
