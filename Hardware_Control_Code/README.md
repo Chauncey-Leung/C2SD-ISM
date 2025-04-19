@@ -1,5 +1,7 @@
 # C2SD-ISM Hardware Parameter Configuration
 
+A high-speed, structured-illumination microscopy system using DMD-based scanning, synchronized multicolor control, and axial Z-stack acquisition.
+
 This repository provides hardware configuration details for the **C2SD-ISM microscope system**, including:
 
 - LabVIEW parameter interface  
@@ -11,7 +13,10 @@ The C2SD-ISM system shares its LabVIEW control logic with MC-ISM. The following 
 
 > For more details on camera software settings, please refer to the [Hamamatsu HCImageLive official documentation](https://hcimage.com/support/).
 
+
 ---
+
+
 
 ## Parameter Table: LabVIEW Front Panel
 
@@ -36,17 +41,18 @@ The C2SD-ISM system shares its LabVIEW control logic with MC-ISM. The following 
 ---
 
 ## Matching Software Interfaces
-![Figure 1](figure/Fig1.jpg)
-- **Fig. 1** LabVIEW front panel layout
-![Figure 2](figure/Fig2.jpg)
-- **Fig. 2** DMD control panel settings
-![Figure 3](figure/Fig3.jpg)  
-- **Fig. 3** HCImageLive configuration screenshot #1  
-![Figure 4](figure/Fig4.jpg)
-- **Fig. 4** HCImageLive configuration screenshot #2  
-![Figure 5](figure/Fig5.jpg)
-- **Fig. 5** HCImageLive configuration screenshot #3  
 
-> ⚠️ Please make sure the DMD and camera triggering logic is synchronized properly through LabVIEW to ensure correct imaging.
+> **Important**: Ensure that DMD triggering and camera exposure are synchronized through LabVIEW to avoid frame mismatches or timing errors.
 
----
+### LabVIEW and Camera Panels
+
+![Fig. 1: LabVIEW front panel layout](figure/Fig1.jpg)
+
+![Fig. 2: DMD control panel settings](figure/Fig2.jpg)
+
+![Fig. 3: HCImageLive configuration screenshot #1](figure/Fig3.jpg)
+
+![Fig. 4: HCImageLive configuration screenshot #2](figure/Fig4.jpg)
+
+![Fig. 5: HCImageLive configuration screenshot #3](figure/Fig5.jpg)
+
