@@ -1,38 +1,52 @@
-# Hardware Parameter Settings
+# C2SD-ISM Hardware Parameter Configuration
 
-This section describes the **LabVIEW parameter settings** and the corresponding **camera software (HCImageLive)** parameters that align with the LabVIEW configuration.
+This repository provides hardware configuration details for the **C2SD-ISM microscope system**, including:
 
-We also include **Table 1**, which explains the meanings of various parameters on the **LabVIEW front panel**. For details on the camera software parameters, please refer to the official documentation of the Hamamatsu camera:  
-👉 [https://hcimage.com/support/](https://hcimage.com/support/)
+- LabVIEW parameter interface  
+- Camera software (Hamamatsu HCImageLive) configuration  
+- DMD control logic and synchronization  
+- Explanation of acquisition parameters
 
-## Table 1. Explanation of Parameters in the LabVIEW Front Panel
+The C2SD-ISM system shares its LabVIEW control logic with MC-ISM. The following sections describe how the control parameters are set and how they correspond across devices.
 
-| **Parameter Name**        | **Adjustable** | **Notes**                                                                                      |
-|---------------------------|----------------|------------------------------------------------------------------------------------------------|
-| X size                    | ✅             | Number of scanning steps of the galvo along the fast axis.                                     |
-| Y size                    | ✅             | Number of scanning steps of the galvo along the slow axis.                                     |
-| Amplitude X              | ✅             | Total step voltage of the galvo in the fast axis direction.                                    |
-| Amplitude Y              | ✅             | Total step voltage of the galvo in the slow axis direction.                                    |
-| Scan range (μm)          | ✅             | Axial (z-axis) scan depth.                                                                     |
-| Step size (μm)           | ✅             | Axial (z-axis) step increment.                                                                 |
-| Multicolor               | ✅             | Number of laser wavelengths used in multicolor imaging.                                        |
-| Exposure time            | ✅             | Exposure duration per image.                                                                   |
-| Vertical                 | ✅             | Number of rows in each acquired image, affecting camera readout time.                          |
-| Point precision (μs/pt)  | ✅             | Sampling resolution, typically 10 μs/point.                                                     |
-| Slope                    | ✅             | Ratio of galvo movement time to total readout time. Generally 30%.                             |
-| Dwell time               | ✅             | Ratio of galvo stabilization time to total readout time. Generally 70%.                        |
-| Z calibration            | ✅             | Calibrate piezo stage so that the initial axial position aligns with the desired reference.    |
-| First                    | ✅             | First galvo step’s voltage multiple compared to others.                                        |
-| Num of cycle             | ✅             | Total cycles for multicolor and axial scanning.                                                |
-| Num of captured cycle    | ✅             | Number of captured cycles.                                                                     |
-| Time consumed            | ❌ (auto)       | Automatically calculated total scan duration.                                                  |
-| Camera frame rate        | ❌ (auto)       | Frames per second under external trigger. Must match HCImageLive settings.                     |
-| Number of camera frames  | ❌ (auto)       | Total frames acquired per scan cycle. Must be set in HCImageLive.                              |
-| Acquisition rate         | ❌ (auto)       | Automatically calculated rate based on time per cycle.                                         |
+> For more details on camera software settings, please refer to the [Hamamatsu HCImageLive official documentation](https://hcimage.com/support/).
 
-## Figure
+---
 
-**Figure 1**. LabVIEW control code front panel.  
-(*Figure not included in this version.*)
+## Parameter Table: LabVIEW Front Panel
+
+| **Parameter Name**         | **Property**         | **Description**                                                                 |
+|---------------------------|----------------------|---------------------------------------------------------------------------------|
+| `X size`                  | Adjustable           | Number of DMD patterns to switch in the horizontal direction.                  |
+| `Y size`                  | Adjustable           | Number of DMD patterns to switch in the vertical direction.                    |
+| `Scan range (µm)`         | Adjustable           | Axial (Z-axis) depth scan range.                                               |
+| `Step size (µm)`          | Adjustable           | Axial step size between adjacent Z-slices.                                     |
+| `Multicolor`              | Adjustable           | Number of laser wavelengths used for multicolor imaging.                       |
+| `Exposure time`           | Adjustable           | Camera exposure time.                                                          |
+| `Vertical`                | Adjustable           | Number of image rows acquired. Affects camera readout time.                    |
+| `Point precision (µs/pt)` | Adjustable           | Sampling precision (typically 10 µs per point).                                |
+| `Z calibration`           | Adjustable           | Initial Z-position calibration of the piezo scanning stage.                    |
+| `Num of cycle`            | Adjustable           | Number of axial and multicolor scanning cycles.                                |
+| `Num of captured cycle`   | Adjustable           | Number of acquisition cycles actually captured.                                |
+| `Time consumed`           | Auto-calculated      | Total time consumed per full scan cycle.                                       |
+| `Camera frame rate`       | Auto-calculated      | Frame rate under external trigger mode (must match camera software exactly).   |
+| `Number of camera frame`  | Auto-calculated      | Number of frames per acquisition cycle (must match camera software).           |
+| `Acquisition rate`        | Auto-calculated      | Overall acquisition speed (calculated from timing).                            |
+
+---
+
+## Matching Software Interfaces
+![Figure 1](figure/Fig1.jpg)
+- **Fig. 1** LabVIEW front panel layout
+![Figure 2](figure/Fig2.jpg)
+- **Fig. 2** DMD control panel settings
+![Figure 3](figure/Fig3.jpg)  
+- **Fig. 3** HCImageLive configuration screenshot #1  
+![Figure 4](figure/Fig4.jpg)
+- **Fig. 4** HCImageLive configuration screenshot #2  
+![Figure 5](figure/Fig5.jpg)
+- **Fig. 5** HCImageLive configuration screenshot #3  
+
+> ⚠️ Please make sure the DMD and camera triggering logic is synchronized properly through LabVIEW to ensure correct imaging.
 
 ---
