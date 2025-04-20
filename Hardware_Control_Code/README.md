@@ -2,7 +2,7 @@
 
 A high-speed, structured-illumination microscopy system using DMD-based scanning, synchronized multicolor control, and axial Z-stack acquisition.
 
-This repository provides hardware configuration details for the **C<sup>2<\sup>SD-ISM microscope system**, including:
+This repository provides hardware configuration details for the **C<sup>2SD-ISM microscope system**, including:
 
 - LabVIEW parameter interface  
 - Camera software (Hamamatsu HCImageLive) configuration  
