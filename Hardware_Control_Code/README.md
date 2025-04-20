@@ -1,15 +1,15 @@
-# C2SD-ISM Hardware Parameter Configuration
+# C<sup>2</sup>SD-ISM Hardware Parameter Configuration
 
 A high-speed, structured-illumination microscopy system using DMD-based scanning, synchronized multicolor control, and axial Z-stack acquisition.
 
-This repository provides hardware configuration details for the **C<sup>2SD-ISM microscope system**, including:
+This repository provides hardware configuration details for the **C<sup>2</sup>SD-ISM microscope system**, including:
 
 - LabVIEW parameter interface  
 - Camera software (Hamamatsu HCImageLive) configuration  
 - DMD control logic and synchronization  
 - Explanation of acquisition parameters
 
-The C2SD-ISM system shares its LabVIEW control logic with MC-ISM. The following sections describe how the control parameters are set and how they correspond across devices.
+The C<sup>2</sup>SD-ISM system shares its LabVIEW control logic with MC-ISM. The following sections describe how the control parameters are set and how they correspond across devices.
 
 > For more details on camera software settings, please refer to the [Hamamatsu HCImageLive official documentation](https://hcimage.com/support/).
 
