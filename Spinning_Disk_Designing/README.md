@@ -1,7 +1,7 @@
 # Spinning Disk Designing
 
 **Main Program**: `generateSpiralMask.m`  
-**Purpose**: Generate a spiral-arranged circular pinhole pattern and export it as a DXF file for use in spinning disk design (e.g., for spinning disk confocal microscopy or optical modulation masks).
+**Purpose**: Generate a spiral-arranged circular pinhole pattern and export it as a DXF file for use in spinning disk design.
 
 ---
 
