@@ -50,9 +50,9 @@ The C<sup>2</sup>SD-ISM system shares its LabVIEW control logic with MC-ISM. The
 
 ![Fig. 2: DMD control panel settings](figure/Fig2.jpg)
 
-![Fig. 3: HCImageLive configuration screenshot #1](figure/Fig3.jpg)
+![Fig. 3: HCImageLive configuration screenshot #1](figure/Fig3.png)
 
-![Fig. 4: HCImageLive configuration screenshot #2](figure/Fig4.jpg)
+![Fig. 4: HCImageLive configuration screenshot #2](figure/Fig4.png)
 
-![Fig. 5: HCImageLive configuration screenshot #3](figure/Fig5.jpg)
+![Fig. 5: HCImageLive configuration screenshot #3](figure/Fig5.png)
 
